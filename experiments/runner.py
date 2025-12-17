@@ -48,13 +48,13 @@ class Runner:
         if args.proc_id == 0:
             if not args.no_cuda and not torch.cuda.is_available():
                 raise Exception("No gpu available for usage")
-            if int(os.getenv('WORLD_SIZE', 1)) >= 1:
+            if int(os.getenv('WORLD_SIZE', 1)) >= 1:        # WORLD_SIZE = 参与训练的总进程数。单机多卡时，进程数等于GPU数量
                 print("Let's use", os.environ['WORLD_SIZE'], "GPUs!")
                 torch.cuda.empty_cache()
 
-        save_id = args.mod
+        save_id = args.mod      # 训练模型名称
         args.save_json_path = args.save_path
-        args.save_path = os.path.join(args.save_path, save_id)
+        args.save_path = os.path.join(args.save_path, save_id)          # save_path 位置：data_splits/openlane/PersFormer/
         if args.proc_id == 0:
             mkdir_if_missing(args.save_path)
             mkdir_if_missing(os.path.join(args.save_path, 'example/'))
@@ -72,7 +72,10 @@ class Runner:
             self.valid_set_labels = [json.loads(line) for line in open(self.val_gt_file).readlines()]
 
         # self.crit_string = 'loss_gflat'
+        # crit_string损失准则:动态选择损失函数实例
+        # criterion：损失函数对象
         self.crit_string = args.crit_string
+        
         # Define loss criteria
         if self.crit_string == 'loss_gflat_3D':
             self.criterion = Loss_crit.Laneline_loss_gflat_3D(args.batch_size, self.train_dataset.num_types,
@@ -682,6 +685,8 @@ class Runner:
     def _get_train_dataset(self):
         args = self.args
         if 'openlane' in args.dataset_name:
+            # args.dataset_dir = '/root/autodl-tmp/dataset/openlane-v1.0/images/'
+            # args.data_dir = '/root/autodl-tmp/dataset/openlane-v1.0/lane3d_1000/'
             train_dataset = LaneDataset(args.dataset_dir, args.data_dir + 'training/', args, data_aug=True, save_std=True, seg_bev=args.seg_bev)
 
         elif 'once' in args.dataset_name:

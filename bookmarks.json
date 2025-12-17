@@ -1,0 +1,91 @@
+{
+  "version": "3.0.1",
+  "lastModified": "2025-12-17T06:25:22.492Z",
+  "folders": [],
+  "bookmarks": [
+    {
+      "id": "mj113126drhj06q881n",
+      "name": "Re-calculate extrinsic matrix based on ground coordinate",
+      "file": "data/Load_Data.py",
+      "line": 557,
+      "character": 16,
+      "lineContent": "gt_cam_height = cam_extrinsics[2, 3]",
+      "sortOrder": 2,
+      "color": "orange"
+    },
+    {
+      "id": "mj11isucznhzdm43lq",
+      "name": "Coordinate convertion for openlane_300 data",
+      "file": "data/Load_Data.py",
+      "line": 584,
+      "character": 16,
+      "lineContent": "lane = np.matmul(cam_extrinsics, np.matmul(cam_representation, lane))",
+      "sortOrder": 3,
+      "color": "orange"
+    },
+    {
+      "id": "mj11v2knq99epobgbcr",
+      "name": "convert 3d lanes to flat ground space",
+      "file": "data/Load_Data.py",
+      "line": 634,
+      "character": 8,
+      "lineContent": "self.convert_lanes_3d_to_gflat(gt_lanes, P_g2gflat)",
+      "sortOrder": 4,
+      "color": "orange"
+    },
+    {
+      "id": "mj6hadqnfgbwyfseb0r",
+      "name": "class Runner:",
+      "file": "experiments/runner.py",
+      "line": 43,
+      "character": 0,
+      "lineContent": "class Runner:",
+      "sortOrder": 0
+    },
+    {
+      "id": "mj6harrsdxvm3dmuyje",
+      "name": "def train(self):",
+      "file": "experiments/runner.py",
+      "line": 106,
+      "character": 4,
+      "lineContent": "def train(self):",
+      "sortOrder": 1
+    },
+    {
+      "id": "mj9fg5e8ip7goi8o6bq",
+      "name": "if not args.no_tb and args.proc_id == 0:",
+      "file": "experiments/runner.py",
+      "line": 147,
+      "character": 8,
+      "lineContent": "if not args.no_tb and args.proc_id == 0:",
+      "sortOrder": 6
+    },
+    {
+      "id": "mj9g25gd8p16a05cmsl",
+      "name": "def WIP__getitem__(self, idx):",
+      "file": "data/Load_Data.py",
+      "line": 707,
+      "character": 4,
+      "lineContent": "def WIP__getitem__(self, idx):",
+      "sortOrder": 7
+    },
+    {
+      "id": "mj9mgdzc68ii017taws",
+      "name": "label_list = glob.glob(json_file_path + '**/*.json', recursive=True)",
+      "file": "data/Load_Data.py",
+      "line": 1214,
+      "character": 8,
+      "lineContent": "label_list = glob.glob(json_file_path + '**/*.json', recursive=True)",
+      "sortOrder": 8
+    },
+    {
+      "id": "mj9mj7jgurjuhpsx1kg",
+      "name": "train_dataset = LaneDataset(args.dataset_dir, args.data_dir + 'training/', args, data_aug=True, save_std=True, seg_bev=args.seg_bev)",
+      "file": "experiments/runner.py",
+      "line": 689,
+      "character": 12,
+      "lineContent": "train_dataset = LaneDataset(args.dataset_dir, args.data_dir + 'training/', args, data_aug=True, save_std=True, seg_bev=args.seg_bev)",
+      "sortOrder": 5
+    }
+  ]
+}
