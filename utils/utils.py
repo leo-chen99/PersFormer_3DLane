@@ -917,13 +917,13 @@ def homographic_transformation(Matrix, x, y):
 
 def projective_transformation(Matrix, x, y, z):
     """
-    Helper function to transform coordinates defined by transformation matrix
+    用于通过变换矩阵转换坐标的辅助函数
 
-    Args:
-            Matrix (multi dim - array): 3x4 projection matrix
-            x (array): original x coordinates
-            y (array): original y coordinates
-            z (array): original z coordinates
+参数：
+    Matrix (多维数组)：3x4 投影矩阵
+    x (数组)：原始 x 坐标
+    y (数组)：原始 y 坐标
+    z (数组)：原始 z 坐标
     """
     ones = np.ones((1, len(z)))
     coordinates = np.vstack((x, y, z, ones))

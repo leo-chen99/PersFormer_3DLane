@@ -704,7 +704,7 @@ class LaneDataset(Dataset):
         """
         return self.n_samples
 
-    # new getitem, WIP
+    # 新的getitem，进行中
     def WIP__getitem__(self, idx):
         """
         Args: idx (int): Index in list to load image
@@ -796,11 +796,11 @@ class LaneDataset(Dataset):
         image = F.resize(image, size=(self.h_net, self.w_net), interpolation=InterpolationMode.BILINEAR)
 
         # Debug：Visualize resize image
-        # import matplotlib.pyplot as plt
-        # import numpy as np
-        # plt.imshow(np.array(image))
-        # plt.title(f'缩放后: {image.size}')
-        # plt.show()
+        import matplotlib.pyplot as plt
+        import numpy as np
+        plt.imshow(np.array(image))
+        plt.title(f'缩放后: {image.size}')
+        plt.show()
 
         gt_anchor = np.zeros([self.anchor_num, self.num_types, self.anchor_dim], dtype=np.float32)
         gt_anchor[:, :, self.anchor_dim - self.num_category] = 1.0

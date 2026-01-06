@@ -53,6 +53,8 @@ class Runner:
                 torch.cuda.empty_cache()
 
         save_id = args.mod      # 训练模型名称
+
+        # /root/autodl-tmp/projects/PersFormer_3DLane/data_splits/openlane
         args.save_json_path = args.save_path
         args.save_path = os.path.join(args.save_path, save_id)          # save_path 位置：data_splits/openlane/PersFormer/
         if args.proc_id == 0:
