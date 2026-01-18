@@ -2570,9 +2570,9 @@ def get_loader(transformed_dataset, args):
                                 worker_init_fn=seed_worker,
                                 generator=g)
 
-    if args.dist:
-        return data_loader, data_sampler
-    return data_loader
+    
+    return data_loader, data_sampler
+    
 
 
 def compute_2d_lanes(pred_anchor, h_samples, H_g2im, anchor_x_steps, anchor_y_steps, x_min, x_max, prob_th=0.5):

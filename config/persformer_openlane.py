@@ -121,7 +121,8 @@ def config(args):
     args.num_y_steps = len(args.anchor_y_steps)
 
     # ddp related
-    args.dist = True
+    # args.dist = True
+    args.dist = False
     args.sync_bn = True
 
     args.cudnn = True

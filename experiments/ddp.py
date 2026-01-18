@@ -30,12 +30,12 @@ def setup_dist_launch(args):
 
     # 通过launch.json 文件中定义的PyTorch分布式启动器获取总进程数
     # world_size = int(os.getenv('WORLD_SIZE', 1))*args.nodes       
-    world_size = int(os.environ['WORLD_SIZE'])
+    args.world_size = int(os.environ['WORLD_SIZE'])
     print("proc_id: " + str(args.proc_id))
-    print("world size: " + str(world_size))
+    print("world size: " + str(args.world_size))
     print("local_rank: " + str(args.local_rank))
 
-    os.environ['WORLD_SIZE'] = str(world_size)
+    os.environ['WORLD_SIZE'] = str(args.world_size)
     os.environ['RANK'] = str(args.proc_id)
     os.environ['LOCAL_RANK'] = str(args.local_rank)
 
